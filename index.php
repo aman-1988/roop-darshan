@@ -70,9 +70,10 @@ foreach ($inventory_levels as $key3 => $value3) {
     $location_id = $inventory_levels[$key3]['location_id'];
     $available = $inventory_levels[$key3]['available'];
  
- if($available <= 2 ) { $available2 = "Low Stock"; }
+ if(empty($available) or $available <= 0 ) { $available2 = "No Stock"; }
+ else if($available <= 2 ) { $available2 = "Low Stock"; }
  else if($available > 2 ) {  $available2 = "In Stock"; }
- else { $available2 = "No Stock"; }
+ 
  
     //echo $location_id." - ".$available."<br>";
     $location_id_name = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/locations/".$location_id.".json");
