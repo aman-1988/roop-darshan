@@ -77,7 +77,7 @@ foreach ($inventory_levels as $key3 => $value3) {
  
     //echo $location_id." - ".$available."<br>";
     $location_id_name = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/locations/".$location_id.".json");
-    echo "<div clas='imgareass'>".$location_id_name['location']['name']."</div> <div class='textareass'>".$available2."</div>";
+    echo "<div class='mainareass1'><div clas='imgareass'>".$location_id_name['location']['name']."</div> <div class='textareass'>".$available2."</div></div>";
     
 }
 
