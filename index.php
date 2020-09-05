@@ -12,7 +12,7 @@ else
     $_POST['extra']='2.POST Request from hayageek.com';
   //  echo json_encode($_POST);
  $name = $_POST['name'];
- $age = $_POST['age'];
+ $varientss = $_POST['varientss'];
     
     
     
@@ -53,7 +53,7 @@ return $json_data_shopify;
 
 
 //$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products/4665553748050.json");
-$productss_var = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/variants/32559913533522.json");
+$productss_var = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/variants/".$varientss.".json");
 
 
 $inventory_item_id = $productss_var['variant']['inventory_item_id'];
