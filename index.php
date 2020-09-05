@@ -1,4 +1,35 @@
 <?php
+header('Access-Control-Allow-Origin: *'); 
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+ 
+if(isset($HTTP_RAW_POST_DATA)) {
+  parse_str($HTTP_RAW_POST_DATA,$arr); 
+  $arr['extra']='1.POST Request from hayageek.com';
+  echo json_encode($arr);
+}
+else
+{
+    $_POST['extra']='2.POST Request from hayageek.com';
+  //  echo json_encode($_POST);
+ $name = $_POST['name'];
+ $age = $_POST['age'];
+    
+    
+    
+    
+    
+ //if($age == "22222")
+ //{
+// echo '<img src="https://bouteeki-mockup.herokuapp.com/image.jpg" style="max-width:50%;">';
+ //} else {
+ // echo "Code is not correct";
+// }
+ //echo $name." - ".$age;
+ //echo "aman";
+
+
+
+
 
 $SHOPIFY_SHOP = 'roop-darshan-ltd.myshopify.com'; //For eg: storedenavin.myshopify.com
 
@@ -24,10 +55,6 @@ return $json_data_shopify;
 //$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products/4665553748050.json");
 $productss_var = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/variants/32559913533522.json");
 
-//$allproductidss = $productss['products'];
-
-//echo "<pre>";
-//print_r($productss_var);
 
 $inventory_item_id = $productss_var['variant']['inventory_item_id'];
 //echo $inventory_item_id;
@@ -49,4 +76,7 @@ foreach ($inventory_levels as $key3 => $value3) {
 }
 
 
+
+
+}
 ?>
